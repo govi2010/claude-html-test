@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanshika Tilwani - Professional Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .left-panel {
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+        }
+        .profile-banner {
+            background: linear-gradient(135deg, #F45A57 0%, #ff8a80 100%);
+            height: 200px;
+            position: relative;
+        }
+        .profile-img-container {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border: 5px solid #1a1a2e;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .info-card {
+            background: #ffffff;
+            border-left: 4px solid #F45A57;
+            transition: all 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateX(5px);
+            box-shadow: -5px 5px 20px rgba(244, 90, 87, 0.2);
+        }
+        .contact-link {
+            background: linear-gradient(135deg, #F45A57 0%, #ff7e5f 100%);
+            color: white;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+        }
+        .contact-link:hover {
+            box-shadow: 0 5px 15px rgba(244, 90, 87, 0.4);
+            transform: scale(1.02);
+        }
+        .social-link {
+            background: #f8f9fa;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            background: #F45A57;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="flex flex-col lg:flex-row min-h-screen">
+        <!-- Left Panel -->
+        <div class="left-panel lg:w-2/5 text-white">
+            <div class="profile-banner">
+                <div class="profile-img-container">
+                    <img src="https://via.placeholder.com/120" alt="Vanshika Tilwani" class="profile-img">
+                </div>
+            </div>
+
+            <div class="pt-20 px-8 pb-8">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold mb-2">Vanshika Tilwani</h1>
+                    <p class="text-xl text-gray-300 mb-4">Managing Director (RCIC)</p>
+                    <div class="inline-flex items-center bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+                        <i class="fas fa-building mr-2 text-orange-400"></i>
+                        <span class="text-sm">Rise N Sky Immigration</span>
+                    </div>
+                </div>
+
+                <!-- Credentials -->
+                <div class="space-y-4 mb-8">
+                    <div class="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+                        <div class="flex items-start">
+                            <i class="fas fa-certificate text-orange-400 mt-1 mr-3"></i>
+                            <p class="text-sm">Regulated Canadian Immigration Consultant</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+                        <div class="flex items-start">
+                            <i class="fas fa-stamp text-orange-400 mt-1 mr-3"></i>
+                            <p class="text-sm">Commissioner Of Oaths</p>
+                        </div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+                        <div class="flex items-start">
+                            <i class="fas fa-balance-scale text-orange-400 mt-1 mr-3"></i>
+                            <p class="text-sm">Commissioner Of Oath Ontario</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-sm uppercase tracking-wider text-gray-400 mb-4">Connect With Me</h3>
+                    <div class="grid grid-cols-5 gap-3">
+                        <a href="https://risenskyimmigration.com" target="_blank" class="social-link aspect-square rounded-lg flex items-center justify-center">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link aspect-square rounded-lg flex items-center justify-center">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link aspect-square rounded-lg flex items-center justify-center">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link aspect-square rounded-lg flex items-center justify-center">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link aspect-square rounded-lg flex items-center justify-center">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="lg:w-3/5 p-8 lg:p-12">
+            <div class="max-w-2xl">
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Get In Touch</h2>
+
+                <!-- Contact Methods -->
+                <div class="space-y-4 mb-10">
+                    <a href="https://wa.me/16475002641" class="contact-link block p-5 rounded-xl">
+                        <div class="flex items-center">
+                            <div class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm opacity-90">WhatsApp (Canada)</p>
+                                <p class="text-lg font-semibold">+1 647-500-2641</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="tel:+16475598840" class="info-card block p-5 rounded-xl shadow-sm">
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-xl text-gray-700"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Work Phone</p>
+                                <p class="text-lg font-semibold text-gray-800">+1 647-559-8840</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="mailto:info@risenskyimmigration.com" class="info-card block p-5 rounded-xl shadow-sm">
+                        <div class="flex items-center">
+                            <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-xl text-gray-700"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">Email Address</p>
+                                <p class="text-lg font-semibold text-gray-800">info@risenskyimmigration.com</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Office Locations -->
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Offices</h3>
+                <div class="space-y-6">
+                    <div class="info-card p-6 rounded-xl shadow-sm">
+                        <div class="flex items-start">
+                            <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                                    Canada Head Office
+                                    <span class="ml-2 bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full">HQ</span>
+                                </h4>
+                                <p class="text-gray-600 text-sm leading-relaxed">
+                                    18-7001 Steeles Avenue West<br>
+                                    Toronto, ON M9W 0A2<br>
+                                    Canada
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-6 rounded-xl shadow-sm">
+                        <div class="flex items-start">
+                            <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl text-orange-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-800 mb-2">India Branch Office</h4>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-3">
+                                    B-304 Stellar, Sindhu Bhavan Road<br>
+                                    Badokdev, Ahmedabad<br>
+                                    Gujarat – 380054, India
+                                </p>
+                                <a href="https://wa.me/917990979334" class="inline-flex items-center text-green-600 text-sm font-semibold hover:text-green-700">
+                                    <i class="fab fa-whatsapp mr-2"></i>
+                                    +91 7990979334
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Contact Button -->
+                <button class="mt-8 w-full bg-gray-800 text-white py-4 rounded-xl font-semibold hover:bg-gray-900 transition">
+                    <i class="fas fa-download mr-2"></i>
+                    Save Contact Information
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
