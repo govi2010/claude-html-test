@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanshika Tilwani - Business Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float-bubble {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-30px) translateX(20px);
+            }
+            50% {
+                transform: translateY(-50px) translateX(-10px);
+            }
+            75% {
+                transform: translateY(-20px) translateX(30px);
+            }
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(244, 90, 87, 0.3),
+                            0 0 40px rgba(102, 126, 234, 0.2),
+                            inset 0 0 20px rgba(255, 255, 255, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(244, 90, 87, 0.5),
+                            0 0 80px rgba(102, 126, 234, 0.3),
+                            inset 0 0 30px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        @keyframes scale-in {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes border-dance {
+            0%, 100% { border-color: #F45A57; }
+            25% { border-color: #667eea; }
+            50% { border-color: #f093fb; }
+            75% { border-color: #4facfe; }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-strong {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+        }
+
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+            animation: float-bubble 8s ease-in-out infinite;
+        }
+
+        .rotating-border {
+            position: relative;
+        }
+
+        .rotating-border::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: inherit;
+            padding: 3px;
+            background: linear-gradient(45deg, #F45A57, #667eea, #f093fb, #4facfe, #F45A57);
+            background-size: 300% 300%;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: rotate-slow 4s linear infinite, border-dance 3s ease-in-out infinite;
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .scale-in {
+            animation: scale-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .glow-effect {
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; overflow-x: hidden;">
+
+    <!-- Background with gradient and image -->
+    <div style="position: fixed; inset: 0; z-index: -1;">
+        <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&h=1080&fit=crop"
+             alt="Background"
+             style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 25%, rgba(240, 147, 251, 0.7) 50%, rgba(244, 90, 87, 0.7) 75%, rgba(79, 172, 254, 0.7) 100%);"></div>
+    </div>
+
+    <!-- Floating Bubbles -->
+    <div class="bubble" style="width: 100px; height: 100px; top: 10%; left: 10%; animation-delay: 0s;"></div>
+    <div class="bubble" style="width: 150px; height: 150px; top: 60%; right: 15%; animation-delay: 2s;"></div>
+    <div class="bubble" style="width: 80px; height: 80px; bottom: 20%; left: 20%; animation-delay: 4s;"></div>
+    <div class="bubble" style="width: 120px; height: 120px; top: 30%; right: 30%; animation-delay: 1s;"></div>
+
+    <!-- Main Container -->
+    <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; position: relative; z-index: 1;">
+
+        <div style="max-width: 1100px; width: 100%;">
+
+            <!-- Main Glass Card -->
+            <div class="glass-strong scale-in glow-effect" style="border-radius: 40px; padding: 50px; animation-delay: 0.1s; opacity: 0;">
+
+                <!-- Header with Cover and Profile -->
+                <div style="position: relative; margin-bottom: 40px;">
+
+                    <!-- Cover Image in Glass Container -->
+                    <div class="glass rotating-border" style="border-radius: 30px; overflow: hidden; height: 250px; margin-bottom: -80px; position: relative;">
+                        <img src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?w=1100&h=250&fit=crop"
+                             alt="Cover"
+                             style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(244, 90, 87, 0.4), rgba(102, 126, 234, 0.4));"></div>
+
+                        <!-- Logo on Cover -->
+                        <div class="glass" style="position: absolute; top: 30px; left: 40px; padding: 18px 28px; border-radius: 20px;">
+                            <div style="font-size: 28px; font-weight: 900; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); letter-spacing: -1px;">
+                                Rise N Sky
+                            </div>
+                            <div style="font-size: 11px; color: rgba(255,255,255,0.9); font-weight: 700; margin-top: 3px; letter-spacing: 2px;">
+                                IMMIGRATION
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Photo -->
+                    <div style="display: flex; justify-content: center;">
+                        <div class="rotating-border" style="width: 180px; height: 180px; border-radius: 50%;">
+                            <div class="glass" style="width: 100%; height: 100%; border-radius: 50%; padding: 8px;">
+                                <div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 4px solid rgba(255,255,255,0.5);">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=180&h=180&fit=crop"
+                                         alt="Vanshika Tilwani"
+                                         style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Name and Title -->
+                <div style="text-align: center; margin-bottom: 35px;">
+                    <h1 style="margin: 0; font-size: 52px; font-weight: 900; color: white; text-shadow: 0 4px 20px rgba(0,0,0,0.3); letter-spacing: -2px;">
+                        Vanshika Tilwani
+                    </h1>
+                    <div style="margin-top: 12px; font-size: 24px; font-weight: 700; color: rgba(255,255,255,0.95);">
+                        Managing Director (RCIC)
+                    </div>
+                    <div style="margin-top: 10px; font-size: 16px; color: rgba(255,255,255,0.85); font-style: italic; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                        "Leaders In Migration Solution"
+                    </div>
+
+                    <!-- Credentials Pills -->
+                    <div style="display: flex; gap: 12px; justify-content: center; margin-top: 24px; flex-wrap: wrap;">
+                        <div class="glass" style="padding: 10px 24px; border-radius: 50px; color: white; font-size: 13px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            Regulated Canadian Immigration Consultant
+                        </div>
+                        <div class="glass" style="padding: 10px 24px; border-radius: 50px; color: white; font-size: 13px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            Commissioner Of Oaths Ontario
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Information Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px;">
+
+                    <!-- Contact Numbers -->
+                    <div class="glass scale-in" style="padding: 28px; border-radius: 24px; animation-delay: 0.2s; opacity: 0;">
+                        <div style="font-size: 14px; color: white; font-weight: 800; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            📞 Contact Numbers
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="color: rgba(255,255,255,0.95); font-size: 15px; font-weight: 500;">
+                                <strong style="color: white;">WhatsApp:</strong> +1-647-500-2641
+                            </div>
+                            <div style="color: rgba(255,255,255,0.95); font-size: 15px; font-weight: 500;">
+                                <strong style="color: white;">Work:</strong> +1-647-559-8840
+                            </div>
+                            <div style="color: rgba(255,255,255,0.95); font-size: 15px; font-weight: 500;">
+                                <strong style="color: white;">India:</strong> +91-799-097-9334
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Email & Website -->
+                    <div class="glass scale-in" style="padding: 28px; border-radius: 24px; animation-delay: 0.3s; opacity: 0;">
+                        <div style="font-size: 14px; color: white; font-weight: 800; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            ✉️ Email & Website
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <div style="color: rgba(255,255,255,0.95); font-size: 15px; font-weight: 500; word-break: break-all;">
+                                <strong style="color: white;">Email:</strong><br>
+                                info@risenskyimmigration.com
+                            </div>
+                            <div style="color: rgba(255,255,255,0.95); font-size: 15px; font-weight: 500;">
+                                <strong style="color: white;">Website:</strong><br>
+                                www.risenskyimmigration.com
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canada Office -->
+                    <div class="glass scale-in" style="padding: 28px; border-radius: 24px; animation-delay: 0.4s; opacity: 0;">
+                        <div style="font-size: 14px; color: white; font-weight: 800; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            🇨🇦 Canada Head Office
+                        </div>
+                        <div style="color: rgba(255,255,255,0.95); font-size: 15px; font-weight: 500; line-height: 1.7;">
+                            18-7001 Steeles Avenue West<br>
+                            Toronto, ON M9W 0A2<br>
+                            Canada
+                        </div>
+                    </div>
+
+                    <!-- India Office -->
+                    <div class="glass scale-in" style="padding: 28px; border-radius: 24px; animation-delay: 0.5s; opacity: 0;">
+                        <div style="font-size: 14px; color: white; font-weight: 800; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            🇮🇳 India Branch Office
+                        </div>
+                        <div style="color: rgba(255,255,255,0.95); font-size: 15px; font-weight: 500; line-height: 1.7;">
+                            B-304 Stellar, Sindhu Bhavan Road<br>
+                            Ahmedabad, Gujarat 380054<br>
+                            India
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Social Media Buttons -->
+                <div class="scale-in" style="margin-top: 40px; animation-delay: 0.6s; opacity: 0;">
+                    <div style="font-size: 18px; color: white; font-weight: 700; text-align: center; margin-bottom: 24px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                        Connect With Us
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+                        <button class="btn-glass" style="color: white; border: none; padding: 16px 24px; border-radius: 16px; font-weight: 700; cursor: pointer; font-size: 15px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            YouTube
+                        </button>
+                        <button class="btn-glass" style="color: white; border: none; padding: 16px 24px; border-radius: 16px; font-weight: 700; cursor: pointer; font-size: 15px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            LinkedIn
+                        </button>
+                        <button class="btn-glass" style="color: white; border: none; padding: 16px 24px; border-radius: 16px; font-weight: 700; cursor: pointer; font-size: 15px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            Facebook
+                        </button>
+                        <button class="btn-glass" style="color: white; border: none; padding: 16px 24px; border-radius: 16px; font-weight: 700; cursor: pointer; font-size: 15px; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                            Instagram
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
