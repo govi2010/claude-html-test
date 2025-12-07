@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanshika Tilwani - NFC Business Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes slide-in-layer {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scale-in {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(244, 90, 87, 0.3),
+                            0 8px 32px rgba(0, 0, 0, 0.15);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(244, 90, 87, 0.5),
+                            0 12px 48px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes wave-move {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            50% {
+                transform: translateX(20px) translateY(-10px);
+            }
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .glass-layer-1 {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .glass-layer-2 {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .glass-layer-3 {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .slide-layer {
+            animation: slide-in-layer 0.6s ease-out forwards;
+        }
+
+        .scale-layer {
+            animation: scale-in 0.6s ease-out forwards;
+        }
+
+        .fade-layer {
+            animation: fade-up 0.6s ease-out forwards;
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glass:active {
+            transform: scale(0.96);
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .wave-element {
+            animation: wave-move 6s ease-in-out infinite;
+        }
+
+        .glow-ring {
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; min-height: 100vh; position: relative; overflow-x: hidden;">
+
+    <!-- Dynamic Background -->
+    <div style="position: fixed; inset: 0; z-index: 0;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #F45A57 75%, #4facfe 100%);"></div>
+        <!-- Wave Pattern -->
+        <div class="wave-element" style="position: absolute; top: 0; left: 0; right: 0; height: 300px; background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 60%);"></div>
+        <div class="wave-element" style="position: absolute; bottom: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%); animation-delay: 1s;"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div style="position: relative; z-index: 1; min-height: 100vh; padding: 16px; display: flex; flex-direction: column; justify-content: center;">
+
+        <!-- Layer 1: Cover Section -->
+        <div class="glass-layer-1 slide-layer" style="opacity: 0; animation-delay: 0.1s; border-radius: 30px; padding: 24px; margin-bottom: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
+
+            <!-- Cover Image -->
+            <div style="position: relative; height: 160px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=160&fit=crop"
+                     alt="Cover"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(102, 126, 234, 0.4), rgba(244, 90, 87, 0.4));"></div>
+            </div>
+
+            <!-- Logo -->
+            <div class="glass-layer-2" style="display: inline-block; padding: 14px 24px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
+                <div style="font-size: 22px; font-weight: 900; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.3); letter-spacing: -0.5px;">
+                    Rise N Sky
+                </div>
+                <div style="font-size: 10px; color: rgba(255,255,255,0.95); font-weight: 700; margin-top: 3px; letter-spacing: 2px;">
+                    IMMIGRATION
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Layer 2: Profile Section -->
+        <div class="glass-layer-2 scale-layer glow-ring" style="opacity: 0; animation-delay: 0.2s; border-radius: 30px; padding: 28px; margin-bottom: 16px;">
+
+            <!-- Profile Photo -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div style="position: relative; display: inline-block;">
+                    <div style="width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, #F45A57, #f093fb, #667eea); padding: 4px;">
+                        <div style="width: 100%; height: 100%; border-radius: 50%; border: 4px solid white; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=110&h=110&fit=crop"
+                                 alt="Vanshika Tilwani"
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                    <!-- Status -->
+                    <div style="position: absolute; bottom: 5px; right: 5px; width: 22px; height: 22px; background: #10b981; border: 3px solid white; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2);"></div>
+                </div>
+            </div>
+
+            <!-- Name & Title -->
+            <div style="text-align: center;">
+                <h1 style="font-size: 28px; font-weight: 900; color: white; margin-bottom: 8px; text-shadow: 0 4px 12px rgba(0,0,0,0.3); letter-spacing: -1px;">
+                    Vanshika Tilwani
+                </h1>
+                <div style="font-size: 16px; font-weight: 700; color: rgba(255,255,255,0.95); margin-bottom: 6px;">
+                    Managing Director (RCIC)
+                </div>
+                <div style="font-size: 13px; color: rgba(255,255,255,0.9); font-style: italic;">
+                    "Leaders In Migration Solution"
+                </div>
+            </div>
+
+            <!-- Credentials -->
+            <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 8px;">
+                <div class="glass-layer-1" style="padding: 10px 16px; border-radius: 16px; text-align: center; font-size: 11px; font-weight: 700; color: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    ✓ Regulated Canadian Immigration Consultant
+                </div>
+                <div class="glass-layer-1" style="padding: 10px 16px; border-radius: 16px; text-align: center; font-size: 11px; font-weight: 700; color: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    ✓ Commissioner Of Oaths Ontario
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Layer 3: Contact Information -->
+        <div class="glass-layer-3 fade-layer" style="opacity: 0; animation-delay: 0.3s; border-radius: 30px; padding: 24px; margin-bottom: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+
+                <!-- Phone -->
+                <div class="glass-layer-2" style="padding: 16px; border-radius: 16px;">
+                    <div style="font-size: 11px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; opacity: 0.9;">
+                        📞 Contact
+                    </div>
+                    <div style="font-size: 13px; color: white; line-height: 1.8; font-weight: 500;">
+                        <div>WhatsApp: +1-647-500-2641</div>
+                        <div>Work: +1-647-559-8840</div>
+                        <div>India: +91-799-097-9334</div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="glass-layer-2" style="padding: 16px; border-radius: 16px;">
+                    <div style="font-size: 11px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; opacity: 0.9;">
+                        ✉️ Email & Web
+                    </div>
+                    <div style="font-size: 13px; color: white; line-height: 1.8; font-weight: 500; word-break: break-all;">
+                        <div>info@risenskyimmigration.com</div>
+                        <div style="margin-top: 4px;">www.risenskyimmigration.com</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Layer 4: Offices -->
+        <div class="glass-layer-1 fade-layer" style="opacity: 0; animation-delay: 0.4s; border-radius: 30px; padding: 24px; margin-bottom: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+
+                <!-- Canada -->
+                <div class="glass-layer-2" style="padding: 16px; border-radius: 16px;">
+                    <div style="font-size: 11px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; opacity: 0.9;">
+                        🇨🇦 Canada Office
+                    </div>
+                    <div style="font-size: 13px; color: white; line-height: 1.7; font-weight: 500;">
+                        18-7001 Steeles Avenue West<br>
+                        Toronto, ON M9W 0A2, Canada
+                    </div>
+                </div>
+
+                <!-- India -->
+                <div class="glass-layer-2" style="padding: 16px; border-radius: 16px;">
+                    <div style="font-size: 11px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; opacity: 0.9;">
+                        🇮🇳 India Office
+                    </div>
+                    <div style="font-size: 13px; color: white; line-height: 1.7; font-weight: 500;">
+                        B-304 Stellar, Sindhu Bhavan Road<br>
+                        Ahmedabad, Gujarat 380054, India
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Layer 5: Social Media -->
+        <div class="glass-layer-2 fade-layer" style="opacity: 0; animation-delay: 0.5s; border-radius: 30px; padding: 24px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">
+
+            <div style="font-size: 15px; font-weight: 700; color: white; text-align: center; margin-bottom: 16px; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                Connect With Us
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <button class="btn-glass" style="padding: 14px; border-radius: 14px; font-weight: 700; font-size: 13px; color: white; border: none; cursor: pointer;">
+                    YouTube
+                </button>
+                <button class="btn-glass" style="padding: 14px; border-radius: 14px; font-weight: 700; font-size: 13px; color: white; border: none; cursor: pointer;">
+                    LinkedIn
+                </button>
+                <button class="btn-glass" style="padding: 14px; border-radius: 14px; font-weight: 700; font-size: 13px; color: white; border: none; cursor: pointer;">
+                    Facebook
+                </button>
+                <button class="btn-glass" style="padding: 14px; border-radius: 14px; font-weight: 700; font-size: 13px; color: white; border: none; cursor: pointer;">
+                    Instagram
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

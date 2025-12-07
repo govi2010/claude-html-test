@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanshika Tilwani - NFC Business Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes pop-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotate(-3deg);
+            }
+            60% {
+                transform: scale(1.05) rotate(1deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes slide-brutal {
+            from {
+                opacity: 0;
+                transform: translateX(-40px) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        @keyframes shadow-dance {
+            0%, 100% {
+                box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);
+            }
+            50% {
+                box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        @keyframes border-pulse {
+            0%, 100% {
+                border-color: #1a1a1a;
+            }
+            50% {
+                border-color: #F45A57;
+            }
+        }
+
+        @keyframes shake-subtle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-1deg); }
+            75% { transform: rotate(1deg); }
+        }
+
+        .glass-brutal {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 4px solid #1a1a1a;
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);
+        }
+
+        .glass-brutal-light {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 3px solid #1a1a1a;
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.7);
+        }
+
+        .pop-in {
+            animation: pop-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .slide-brutal {
+            animation: slide-brutal 0.6s ease-out forwards;
+        }
+
+        .btn-brutal {
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(10px);
+            border: 3px solid #1a1a1a;
+            box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.8);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn-brutal:active {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+        }
+
+        .shadow-dance {
+            animation: shadow-dance 3s ease-in-out infinite;
+        }
+
+        .border-pulse {
+            animation: border-pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Courier New', monospace; min-height: 100vh; position: relative; overflow-x: hidden; background: #f5f5f5;">
+
+    <!-- Bold Background -->
+    <div style="position: fixed; inset: 0; z-index: 0; background: linear-gradient(135deg, #FFD93D 0%, #FF6B9D 25%, #C8A8E9 50%, #6BCF7F 75%, #4D96FF 100%);">
+        <!-- Grid Pattern -->
+        <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 1px, transparent 1px, transparent 40px);"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div style="position: relative; z-index: 1; min-height: 100vh; padding: 20px; display: flex; flex-direction: column; gap: 20px;">
+
+        <!-- Cover + Logo Section -->
+        <div class="glass-brutal pop-in shadow-dance" style="opacity: 0; animation-delay: 0.1s; border-radius: 0; padding: 0; overflow: hidden;">
+            <div style="position: relative; height: 180px;">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=180&fit=crop"
+                     alt="Cover"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255, 217, 61, 0.3), rgba(255, 107, 157, 0.3));"></div>
+                <div style="position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0,0,0,0.05) 10px, rgba(0,0,0,0.05) 20px);"></div>
+            </div>
+
+            <!-- Logo Badge -->
+            <div style="padding: 20px;">
+                <div class="glass-brutal-light" style="display: inline-block; padding: 16px 24px; border-radius: 0; transform: rotate(-2deg);">
+                    <div style="font-size: 22px; font-weight: 900; color: #1a1a1a; letter-spacing: -0.5px; text-transform: uppercase;">
+                        Rise N Sky
+                    </div>
+                    <div style="font-size: 10px; color: #1a1a1a; font-weight: 800; margin-top: 2px; letter-spacing: 2px;">
+                        IMMIGRATION
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div class="glass-brutal slide-brutal shadow-dance" style="opacity: 0; animation-delay: 0.2s; border-radius: 0; padding: 28px;">
+
+            <!-- Profile Photo -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div style="position: relative; display: inline-block;">
+                    <div class="border-pulse" style="width: 120px; height: 120px; border: 5px solid #1a1a1a; background: white; padding: 6px; transform: rotate(3deg);">
+                        <div style="width: 100%; height: 100%; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop"
+                                 alt="Vanshika Tilwani"
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                    <!-- Status Badge -->
+                    <div style="position: absolute; bottom: -10px; right: -10px; background: #10b981; border: 4px solid #1a1a1a; padding: 4px 12px; font-size: 10px; font-weight: 900; color: white; text-transform: uppercase; transform: rotate(-5deg);">
+                        ONLINE
+                    </div>
+                </div>
+            </div>
+
+            <!-- Name & Title -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h1 style="font-size: 32px; font-weight: 900; color: #1a1a1a; margin-bottom: 8px; text-transform: uppercase; letter-spacing: -1px; text-shadow: 3px 3px 0px rgba(255, 217, 61, 0.7);">
+                    Vanshika<br>Tilwani
+                </h1>
+                <div style="font-size: 16px; font-weight: 900; color: #F45A57; margin-bottom: 8px; text-transform: uppercase;">
+                    Managing Director
+                </div>
+                <div style="font-size: 12px; color: #1a1a1a; font-weight: 700; font-style: italic;">
+                    "Leaders In Migration Solution"
+                </div>
+            </div>
+
+            <!-- Credentials -->
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="glass-brutal-light" style="padding: 12px 16px; border-radius: 0; font-size: 11px; font-weight: 800; color: #1a1a1a; text-align: center; text-transform: uppercase; transform: rotate(-1deg);">
+                    ✓ RCIC Certified
+                </div>
+                <div class="glass-brutal-light" style="padding: 12px 16px; border-radius: 0; font-size: 11px; font-weight: 800; color: #1a1a1a; text-align: center; text-transform: uppercase; transform: rotate(1deg);">
+                    ✓ Commissioner of Oaths
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Contact Info -->
+        <div class="glass-brutal slide-brutal" style="opacity: 0; animation-delay: 0.3s; border-radius: 0; padding: 24px; box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);">
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+
+                <!-- Phone -->
+                <div>
+                    <div style="font-size: 12px; font-weight: 900; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; background: rgba(255, 217, 61, 0.5); display: inline-block; padding: 4px 12px; border: 2px solid #1a1a1a;">
+                        📞 PHONE
+                    </div>
+                    <div style="font-size: 14px; color: #1a1a1a; line-height: 1.8; font-weight: 700;">
+                        <div>WA: +1-647-500-2641</div>
+                        <div>CA: +1-647-559-8840</div>
+                        <div>IN: +91-799-097-9334</div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <div style="font-size: 12px; font-weight: 900; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; background: rgba(255, 107, 157, 0.5); display: inline-block; padding: 4px 12px; border: 2px solid #1a1a1a;">
+                        ✉️ DIGITAL
+                    </div>
+                    <div style="font-size: 13px; color: #1a1a1a; line-height: 1.8; font-weight: 700; word-break: break-all;">
+                        <div>info@risenskyimmigration.com</div>
+                        <div>www.risenskyimmigration.com</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Offices -->
+        <div class="glass-brutal slide-brutal" style="opacity: 0; animation-delay: 0.4s; border-radius: 0; padding: 24px; box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);">
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+
+                <!-- Canada -->
+                <div>
+                    <div style="font-size: 12px; font-weight: 900; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; background: rgba(107, 207, 127, 0.5); display: inline-block; padding: 4px 12px; border: 2px solid #1a1a1a;">
+                        🇨🇦 CANADA HQ
+                    </div>
+                    <div style="font-size: 14px; color: #1a1a1a; line-height: 1.7; font-weight: 700;">
+                        18-7001 Steeles Avenue West<br>
+                        Toronto, ON M9W 0A2
+                    </div>
+                </div>
+
+                <!-- India -->
+                <div>
+                    <div style="font-size: 12px; font-weight: 900; color: #1a1a1a; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; background: rgba(77, 150, 255, 0.5); display: inline-block; padding: 4px 12px; border: 2px solid #1a1a1a;">
+                        🇮🇳 INDIA BRANCH
+                    </div>
+                    <div style="font-size: 14px; color: #1a1a1a; line-height: 1.7; font-weight: 700;">
+                        B-304 Stellar, Sindhu Bhavan Road<br>
+                        Ahmedabad, Gujarat 380054
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Social Media -->
+        <div class="glass-brutal slide-brutal" style="opacity: 0; animation-delay: 0.5s; border-radius: 0; padding: 24px; box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8);">
+
+            <div style="font-size: 16px; font-weight: 900; color: #1a1a1a; text-align: center; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;">
+                → Connect With Us ←
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+                <button class="btn-brutal" style="padding: 14px; border-radius: 0; font-weight: 900; font-size: 13px; color: #1a1a1a; text-transform: uppercase;">
+                    YouTube
+                </button>
+                <button class="btn-brutal" style="padding: 14px; border-radius: 0; font-weight: 900; font-size: 13px; color: #1a1a1a; text-transform: uppercase;">
+                    LinkedIn
+                </button>
+                <button class="btn-brutal" style="padding: 14px; border-radius: 0; font-weight: 900; font-size: 13px; color: #1a1a1a; text-transform: uppercase;">
+                    Facebook
+                </button>
+                <button class="btn-brutal" style="padding: 14px; border-radius: 0; font-weight: 900; font-size: 13px; color: #1a1a1a; text-transform: uppercase;">
+                    Instagram
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
