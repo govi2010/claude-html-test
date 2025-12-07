@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanshika Tilwani - Digital Business Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .slide-up { animation: slideUp 0.6s ease-out forwards; }
+        .bounce-icon { animation: bounce 2s ease-in-out infinite; }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
+    <div style="max-width: 480px; margin: 0 auto; background: white; min-height: 100vh; position: relative; overflow: hidden;">
+        
+        <!-- Colorful Header Wave -->
+        <div style="position: relative; height: 200px; background: linear-gradient(135deg, #F45A57, #F67B79, #f093fb); overflow: hidden;">
+            <svg style="position: absolute; bottom: -1px; width: 100%;" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#ffffff" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+            </svg>
+            
+            <div class="slide-up" style="opacity: 0; animation-delay: 0.1s; position: absolute; top: 24px; left: 24px; background: white; padding: 12px 20px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+                <div style="font-size: 17px; font-weight: 900; background: linear-gradient(135deg, #F45A57, #f093fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Rise N Sky</div>
+                <div style="font-size: 8px; color: #6b7280; font-weight: 800; letter-spacing: 1.5px;">IMMIGRATION</div>
+            </div>
+        </div>
+        
+        <!-- Profile -->
+        <div style="position: relative; margin-top: -80px; padding: 0 24px;">
+            <div class="slide-up bounce-icon" style="opacity: 0; animation-delay: 0.2s; text-align: center; margin-bottom: 20px;">
+                <div style="display: inline-block; background: linear-gradient(135deg, #F45A57, #f093fb); padding: 6px; border-radius: 50%; box-shadow: 0 12px 32px rgba(244, 90, 87, 0.4);">
+                    <div style="width: 120px; height: 120px; border-radius: 50%; border: 5px solid white; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&h=120&fit=crop" alt="Vanshika Tilwani" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slide-up" style="opacity: 0; animation-delay: 0.3s; text-align: center; margin-bottom: 24px;">
+                <h1 style="font-size: 30px; font-weight: 900; background: linear-gradient(135deg, #667eea, #F45A57); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px;">Vanshika Tilwani</h1>
+                <div style="font-size: 17px; font-weight: 700; color: #F45A57; margin-bottom: 6px;">Managing Director (RCIC)</div>
+                <div style="font-size: 15px; font-weight: 600; color: #6b7280; margin-bottom: 10px;">Rise N Sky Immigration</div>
+                <div style="font-size: 14px; color: #9ca3af; font-style: italic;">"Leaders In Migration Solution"</div>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="slide-up" style="opacity: 0; animation-delay: 0.4s; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px;">
+                <button style="padding: 14px; background: linear-gradient(135deg, #667eea, #764ba2); border: none; border-radius: 12px; color: white; font-weight: 700; font-size: 14px; cursor: pointer; box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);">
+                    <i class="fas fa-phone-alt" style="margin-right: 6px;"></i>Call Now
+                </button>
+                <button style="padding: 14px; background: linear-gradient(135deg, #F45A57, #F67B79); border: none; border-radius: 12px; color: white; font-weight: 700; font-size: 14px; cursor: pointer; box-shadow: 0 6px 20px rgba(244, 90, 87, 0.4);">
+                    <i class="fas fa-download" style="margin-right: 6px;"></i>Save Card
+                </button>
+            </div>
+        </div>
+        
+        <!-- Contact Cards with Colors -->
+        <div style="padding: 0 24px; margin-bottom: 24px;">
+            <a href="tel:+16475002641" class="slide-up" style="opacity: 0; animation-delay: 0.5s; display: flex; align-items: center; gap: 14px; padding: 16px; background: linear-gradient(135deg, #d4fc79, #96e6a1); border-radius: 14px; margin-bottom: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 12px rgba(150, 230, 161, 0.3);">
+                <div style="width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 26px;"></i>
+                </div>
+                <div><div style="font-size: 12px; color: #047857; font-weight: 700;">WhatsApp</div>
+                <div style="font-size: 16px; color: #064e3b; font-weight: 800;">+1-647-500-2641</div></div>
+            </a>
+            
+            <a href="tel:+16475598840" class="slide-up" style="opacity: 0; animation-delay: 0.6s; display: flex; align-items: center; gap: 14px; padding: 16px; background: linear-gradient(135deg, #ffeaa7, #fdcb6e); border-radius: 14px; margin-bottom: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 12px rgba(253, 203, 110, 0.3);">
+                <div style="width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-phone" style="color: #F45A57; font-size: 24px;"></i>
+                </div>
+                <div><div style="font-size: 12px; color: #92400e; font-weight: 700;">Work Phone</div>
+                <div style="font-size: 16px; color: #78350f; font-weight: 800;">+1-647-559-8840</div></div>
+            </a>
+            
+            <a href="tel:+917990979334" class="slide-up" style="opacity: 0; animation-delay: 0.7s; display: flex; align-items: center; gap: 14px; padding: 16px; background: linear-gradient(135deg, #d4fc79, #96e6a1); border-radius: 14px; margin-bottom: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 12px rgba(150, 230, 161, 0.3);">
+                <div style="width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fab fa-whatsapp" style="color: #25D366; font-size: 26px;"></i>
+                </div>
+                <div><div style="font-size: 12px; color: #047857; font-weight: 700;">India WhatsApp</div>
+                <div style="font-size: 16px; color: #064e3b; font-weight: 800;">+91-799-097-9334</div></div>
+            </a>
+            
+            <a href="mailto:info@risenskyimmigration.com" class="slide-up" style="opacity: 0; animation-delay: 0.8s; display: flex; align-items: center; gap: 14px; padding: 16px; background: linear-gradient(135deg, #a8edea, #fed6e3); border-radius: 14px; margin-bottom: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 12px rgba(168, 237, 234, 0.3);">
+                <div style="width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-envelope" style="color: #667eea; font-size: 24px;"></i>
+                </div>
+                <div style="flex: 1;"><div style="font-size: 12px; color: #4338ca; font-weight: 700;">Email</div>
+                <div style="font-size: 13px; color: #3730a3; font-weight: 700; word-break: break-all;">info@risenskyimmigration.com</div></div>
+            </a>
+            
+            <a href="https://www.risenskyimmigration.com" target="_blank" class="slide-up" style="opacity: 0; animation-delay: 0.9s; display: flex; align-items: center; gap: 14px; padding: 16px; background: linear-gradient(135deg, #96fbc4, #f9f586); border-radius: 14px; margin-bottom: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 12px rgba(150, 251, 196, 0.3);">
+                <div style="width: 50px; height: 50px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-globe" style="color: #4facfe; font-size: 24px;"></i>
+                </div>
+                <div><div style="font-size: 12px; color: #065f46; font-weight: 700;">Website</div>
+                <div style="font-size: 15px; color: #064e3b; font-weight: 700;">www.risenskyimmigration.com</div></div>
+            </a>
+        </div>
+        
+        <!-- Locations -->
+        <div style="padding: 0 24px; margin-bottom: 24px;">
+            <div class="slide-up" style="opacity: 0; animation-delay: 1s; padding: 18px; background: linear-gradient(135deg, #ffecd2, #fcb69f); border-radius: 14px; margin-bottom: 12px; box-shadow: 0 4px 12px rgba(252, 182, 159, 0.3);">
+                <div style="font-size: 13px; font-weight: 800; color: #9a3412; margin-bottom: 8px;">🇨🇦 CANADA HEAD OFFICE</div>
+                <div style="font-size: 14px; color: #7c2d12; font-weight: 600; line-height: 1.6;">18-7001 Steeles Avenue West, Toronto, ON M9W 0A2</div>
+            </div>
+            
+            <div class="slide-up" style="opacity: 0; animation-delay: 1.1s; padding: 18px; background: linear-gradient(135deg, #ffecd2, #fcb69f); border-radius: 14px; box-shadow: 0 4px 12px rgba(252, 182, 159, 0.3);">
+                <div style="font-size: 13px; font-weight: 800; color: #9a3412; margin-bottom: 8px;">🇮🇳 INDIA BRANCH OFFICE</div>
+                <div style="font-size: 14px; color: #7c2d12; font-weight: 600; line-height: 1.6;">B-304 Stellar, Sindhu Bhavan Road, Ahmedabad, Gujarat 380054</div>
+            </div>
+        </div>
+        
+        <!-- Social -->
+        <div class="slide-up" style="opacity: 0; animation-delay: 1.2s; padding: 0 24px 32px;">
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #FF0000, #CC0000); border-radius: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);">
+                    <i class="fab fa-youtube" style="color: white; font-size: 28px;"></i>
+                </div>
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #0A66C2, #004182); border-radius: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);">
+                    <i class="fab fa-linkedin" style="color: white; font-size: 28px;"></i>
+                </div>
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #1877F2, #0d5dbf); border-radius: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);">
+                    <i class="fab fa-facebook" style="color: white; font-size: 28px;"></i>
+                </div>
+                <div style="aspect-ratio: 1; background: linear-gradient(135deg, #E4405F, #C13584, #833AB4); border-radius: 14px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(228, 64, 95, 0.3);">
+                    <i class="fab fa-instagram" style="color: white; font-size: 28px;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
